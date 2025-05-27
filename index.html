@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yiva Teknoloji - Çalışma Saatleri Anketi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .option {
+      margin: 10px 0;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .thank-you {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Çalışma Saatleri Anketi</h2>
+    <form id="anketForm">
+      <div class="option">
+        <input type="radio" id="secenek1" name="saat" value="08:00 - 17:00" required>
+        <label for="secenek1">08:00 - 17:00</label>
+      </div>
+      <div class="option">
+        <input type="radio" id="secenek2" name="saat" value="09:00 - 18:00">
+        <label for="secenek2">09:00 - 18:00</label>
+      </div>
+      <div class="option">
+        <input type="radio" id="secenek3" name="saat" value="08:30 - 17:30">
+        <label for="secenek3">08:30 - 17:30</label>
+      </div>
+      <button type="submit">Gönder</button>
+    </form>
+    <div class="thank-you" id="tesekkurMesaji">
+      Teşekkürler! Cevabınız kaydedildi.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("anketForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("anketForm").style.display = "none";
+      document.getElementById("tesekkurMesaji").style.display = "block";
+    });
+  </script>
+</body>
+</html>
